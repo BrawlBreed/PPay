@@ -12,7 +12,7 @@ export default defineConfig({
   base: '/',
   server: {
     host: true,
-    port: 3000
+    port: (process.env.NODE_ENV === 'production' ? process.env.PORT : 5173) || 4000,
   },
   envDir: "../"
 });
