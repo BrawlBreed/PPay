@@ -23,7 +23,7 @@
         "dest": "/backend/index.js"
       },
       {
-        "src": "/(.*)", 
+        "src": "/(.*)",
         "dest": "/frontend/index.html"
       }
     ]
