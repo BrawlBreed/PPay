@@ -91,7 +91,6 @@ const verifyReceiver = asyncHandler(async (req, res) => {
 // @access  Private
 const getTransactions = asyncHandler(async (req, res) => {
   const { id } = req.params
-  console.log(id)
   const transactions = await Transaction.find({
     $or: [{ sender: id }, { receiver: id }],
   })
@@ -145,7 +144,6 @@ const getMoneyReceiveTransactions = asyncHandler(async (req, res) => {
 // @access  Private
 const deposit = asyncHandler(async (req, res) => {
   const { amount } = req.body
-  console.log(amount)
   const user = await User.findById(req.user._id)
 
   if (user) {

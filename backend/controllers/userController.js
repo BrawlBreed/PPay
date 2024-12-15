@@ -90,7 +90,6 @@ const register = asyncHandler(async (req, res) => {
 // @access  Public
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body
-  console.log(email, password)
   const user = await User.findOne({ email })
   if (user && (await bcrypt.compare(password, user.password))) {
     var userObj = user.toObject()
@@ -109,7 +108,6 @@ const updateUser = asyncHandler(async (req, res) => {
     user.name = req.body.name || user.name;
 
     const updatedUser = await user.save()
-    console.log(updatedUser)
     res.status(201).json({
       updatedUser,
       token: generateToken(updatedUser._id),
@@ -126,13 +124,10 @@ const updateUser = asyncHandler(async (req, res) => {
 const currentUser = asyncHandler(async (req, res) => {
   let user = await User.findById(req.user._id).select('-password')
   user = user.toObject();
-  console.log(user.name)
   user = {
     ...user,
     token: generateToken(user._id)
   }
-
-  console.log(user)
   if (user) {
     res.status(200).json(user)
   } else {
