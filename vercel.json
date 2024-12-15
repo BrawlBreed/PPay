@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "my-fullstack-app",
+    "name": "wallet-application",
     "builds": [
       {
         "src": "backend/index.js",

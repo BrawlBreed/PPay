@@ -12,7 +12,6 @@ import { useDispatch } from 'react-redux'
 const Home = () => {
   const dispatch = useDispatch()
   useEffect(() => {
-    console.log("Ran")
     dispatch(getuser())
   })
   return (
