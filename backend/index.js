@@ -1,5 +1,7 @@
-const dotenv = require('dotenv').config()
-const path = require('path')
+const path = require('path');
+require('dotenv').config({
+  path: path.resolve(__dirname, '../.env') // Load the .env file one directory above
+});
 const express = require('express')
 const colors = require('colors')
 const cors = require('cors')

@@ -11,8 +11,12 @@ import Request from './pages/Request/Request'
 import Profile from './pages/Profile/Profile'
 import NotFound from './pages/NotFound/NotFound'
 import ErrorBoundary from './ErrorBoundary'
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    console.log(import.meta.env)
+  }, [])
   return (
     <div className='app'>
       <Router>

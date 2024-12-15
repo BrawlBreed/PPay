@@ -1,4 +1,4 @@
 export const API_URL =
-  process.env.NODE_ENV === 'development'
+    process.env.NODE_ENV === 'development'
     ? 'http://localhost:8080'
-    : 'https://mern-wallet-two.onrender.com'
+    : `https://${process.env.VITE_VERCEL_URL}`
