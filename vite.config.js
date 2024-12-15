@@ -7,11 +7,10 @@ export default defineConfig({
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.svg'],
   },
   build: {
-    outDir: '../dist'
+    outDir: 'dist'
   },
   base: '/',
   server: {
     host: true
-  },
-  envDir: "../"
+  }
 });
